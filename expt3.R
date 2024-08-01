@@ -1,0 +1,10 @@
+library(tidyverse)
+data("mtcars")
+datasets::mtcars
+t(mtcars)
+data2<-data.frame(id1=c(1,1,2,2),id2=c(1,2,1,2),x1=c(5,3,6,2),x2=c(6,5,1,4))
+newdata<-melt(data2,id=c("id1","id2"))
+dcast(newdata,id1~variable,mean)
+df1<-data.frame(a=c(1,1,2),b=c(1,2,1))
+df2<-data.frame(a=c(1,2,NA),b=c(1,2,1))
+merge(df1,df2,all=TRUE)
